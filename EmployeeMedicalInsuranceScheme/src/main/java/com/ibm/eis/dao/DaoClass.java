@@ -54,6 +54,7 @@ public class DaoClass implements DaoInterface {
 		//display the table employees
 		String dispQuery = "select * from employees1";
 		try {
+			preparedStatement = dbcon.prepareStatement(dispQuery);
 			resultSet = preparedStatement.executeQuery(dispQuery);
 			while(resultSet.next()) {
 				System.out.println("Id: "+resultSet.getInt("empid")+
