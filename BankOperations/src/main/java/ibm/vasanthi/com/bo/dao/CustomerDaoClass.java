@@ -29,9 +29,9 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 			dbcon = DriverManager.getConnection(urlToConnect, userName, password);
 
 		} catch (ClassNotFoundException e) {
-			System.out.println("cant load class .." + e.getMessage());
+			System.out.println("cant load class ..in customer dao class" + e.getMessage());
 		} catch (SQLException e) {
-			System.out.println("cannot find db..." + e.getMessage());
+			System.out.println("cannot find db...in customer dao class" + e.getMessage());
 		}
 	}
 
@@ -71,7 +71,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("cant find db,...." + e.getMessage());
+			System.out.println("cant find db,....in store into table" + e.getMessage());
 		}
 	}
 
@@ -87,7 +87,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 						+ resultSet.getString("phoneNo"));
 			}
 		} catch (SQLException e) {
-			System.out.println("cant load db.." + e.getMessage());
+			System.out.println("cant load db..in display table" + e.getMessage());
 		}
 
 	}
@@ -141,7 +141,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 				System.out.println("Please check your account number...");
 			}
 		} catch (SQLException e) {
-			System.out.println("cant load db,..." + e.getMessage());
+			System.out.println("cant load db,...in update ammount" + e.getMessage());
 		}
 
 	}
@@ -171,7 +171,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("cant load db,..." + e.getMessage());
+			System.out.println("cant load db,...in withdrawammount" + e.getMessage());
 		}
 	}
 
@@ -194,7 +194,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 				System.out.println("please check your account number..");
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("cant load db..in check account "+e.getMessage());
 		}
 		return flag;
 	}
@@ -232,7 +232,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 				System.out.println("issues in fund transfering..");
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("cant load db in fund transfer..."+e.getMessage());
 		}
 	}
 
@@ -253,7 +253,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("cant find db,...." + e.getMessage());
+			System.out.println("cant find db,....in store into transaction table" + e.getMessage());
 		}
 	}
 
