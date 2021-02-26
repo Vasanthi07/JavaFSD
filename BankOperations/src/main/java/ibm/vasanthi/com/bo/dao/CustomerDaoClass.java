@@ -268,7 +268,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 				if (resultSet.getInt("transAccount") == accNo) {
 					System.out.println(" Current Account: " + resultSet.getInt("transAccount") + " Transfer Account: "
 							+ resultSet.getInt("fromAccount") + " Status : " + resultSet.getString("status")
-							+ " amount :" + resultSet.getInt("amount")+resultSet.getDate("date")+" " +resultSet.getTime("time"));
+							+ " amount :" + resultSet.getInt("amount")+" "+resultSet.getDate("date")+" " +resultSet.getTime("time"));
 				}
 			}
 		} catch (SQLException e) {

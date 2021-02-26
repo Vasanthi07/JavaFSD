@@ -19,7 +19,7 @@ public class App {
 		TransactionDetails transaction = theContext.getBean("theTransaction", TransactionDetails.class);
 		// create a scanner ref
 		Scanner sc = new Scanner(System.in);
-		StringBuilder thePrintStatement = new StringBuilder("");
+		//StringBuilder thePrintStatement = new StringBuilder("");
 		String phoneNo;
 		String name;
 		int accountNo;
@@ -103,8 +103,8 @@ public class App {
 					transaction.setStatus("credited");
 					transaction.setAmmount(depositMoney);
 					service.storeIntoTransactionTable(transaction);
-					String stmt = "\n"+amount1+"deposited money into"+accountNo;
-					thePrintStatement.append(stmt);
+					//String stmt = "\n"+amount1+"deposited money into"+accountNo;
+					//thePrintStatement.append(stmt);
 				}
 			} else if (num == 4) {
 				System.out.println("For withdraw Follow the steps below:");
@@ -124,8 +124,8 @@ public class App {
 						transaction.setStatus("debited");
 						transaction.setAmmount(withdrawMoney);
 						service.storeIntoTransactionTable(transaction);
-						String stmt = "\nfrom "+accountNo+" withdrawed"+withdrawMoney+" and available balance"+availableBalance ;
-						thePrintStatement.append(stmt);
+						//String stmt = "\nfrom "+accountNo+" withdrawed"+withdrawMoney+" and available balance"+availableBalance ;
+						//thePrintStatement.append(stmt);
 					} else {
 						System.out.println("LOW BALANCE ...." + amount1);
 					}
@@ -136,9 +136,9 @@ public class App {
 				System.out.println("Enter your account number:");
 				accountNo = sc.nextInt();
 				amount1 = service.checkBalance(accountNo);
-				System.out.println(amount1);
+				System.out.println("Available Balance: "+amount1);
 				boolean isValid = service.checkAccount(accountNo);
-				System.out.println(isValid);
+				//System.out.println(isValid);
 				if (isValid && amount1 > 0) {
 					System.out.println("Enter account number to which you want to fund transfer:");
 					anotherAccountNo = sc.nextInt();
@@ -157,8 +157,8 @@ public class App {
 							transaction.setStatus("credited");
 							transaction.setAmmount(amountToTransfer);
 							service.storeIntoTransactionTable(transaction);
-							String stmt = "\nfunds transfer from "+accountNo+" to "+anotherAccountNo+ "with an ammount of "+amountToTransfer;
-							thePrintStatement.append(stmt);
+							//String stmt = "\nfunds transfer from "+accountNo+" to "+anotherAccountNo+ "with an ammount of "+amountToTransfer;
+							//thePrintStatement.append(stmt);
 						} else {
 							System.out.println("Insufficient funds....");
 						}
@@ -170,7 +170,7 @@ public class App {
 				System.out.println("Enter account Number: ");
 				int accNo = sc.nextInt();
 				service.displayTransactionTable(accNo);
-				System.out.println("print statement:"+thePrintStatement);
+				//System.out.println("print statement:"+thePrintStatement);
 				
 
 			} else {
