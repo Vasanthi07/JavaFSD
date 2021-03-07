@@ -51,6 +51,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 		return false;
 	}
 
+	@Override
 	public void storeIntoTable(CustomerDetails theCustomer) {
 		// insert records into the database table employees based on the user queries
 		theQuerytoExecute = "insert into bankcustomers(cutsomerName,amount,phoneNo) values(?,?,?)";
@@ -75,6 +76,7 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 		}
 	}
 
+	@Override
 	public void displayTable() {
 		// display the table employees
 		String dispQuery = "select * from bankcustomers";
@@ -273,6 +275,14 @@ public class CustomerDaoClass implements CustomerDaoInterface {
 			}
 		} catch (SQLException e) {
 			System.out.println("cant load db from displayTransaction table.." + e.getMessage());
+		}
+		finally {
+			try {
+				dbcon.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 	}

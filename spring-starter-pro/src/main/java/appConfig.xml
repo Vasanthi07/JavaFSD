@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- <bean class="ibm.vasanthi.com.training.Engine" id="theEngine"> -->
+	<!-- setter dependency injection here -->
+	<!-- <property name="engName" value="Vasanthi"></property> -->
+	<!-- <property name="engId" value="1445"></property> -->
+	<!-- <property name="listOfAddress"> -->
+	<!-- <list> -->
+	<!-- <ref bean="theAddress" /> -->
+	<!-- <ref bean="secondAddress"/> -->
+	<!-- </list> -->
+	<!-- </property> -->
+	<!-- constructor dependency injection here -->
+	<!-- <constructor-arg value="vasanthi"></constructor-arg> -->
+	<!-- <constructor-arg value="1445"></constructor-arg> -->
+	<!-- <constructor-arg ref="theAddress"></constructor-arg> -->
+	<!-- </bean> -->
+	<bean class="ibm.vasanthi.com.training.Address" id="theAddress">
+		<property name="location" value="Hyderabad"></property>
+		<property name="pincode" value="505001"></property>
+	</bean>
+	<!-- <bean class="ibm.vasanthi.com.training.Address" id="secondAddress"> -->
+	<!-- <property name="location" value="Banglore"></property> -->
+	<!-- <property name="pincode" value="890356"></property> -->
+	<!-- </bean> -->
+	<bean init-method="callAtBeginning" destroy-method="callAtEnd" class="ibm.vasanthi.com.training.SoftwareEngineer"
+		id="softwareEngineer" autowire="byName">
+	</bean>
+</beans>

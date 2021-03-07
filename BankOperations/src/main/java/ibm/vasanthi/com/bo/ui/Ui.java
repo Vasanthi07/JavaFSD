@@ -105,8 +105,6 @@ public class Ui {
 				transaction.setStatus("credited");
 				transaction.setAmmount(depositMoney);
 				service.storeIntoTransactionTable(transaction);
-				// String stmt = "\n"+amount1+"deposited money into"+accountNo;
-				// thePrintStatement.append(stmt);
 			}
 		} else if (num == 4) {
 			System.out.println("For withdraw Follow the steps below:");
@@ -126,9 +124,6 @@ public class Ui {
 					transaction.setStatus("debited");
 					transaction.setAmmount(withdrawMoney);
 					service.storeIntoTransactionTable(transaction);
-					// String stmt = "\nfrom "+accountNo+" withdrawed"+withdrawMoney+" and available
-					// balance"+availableBalance ;
-					// thePrintStatement.append(stmt);
 				} else {
 					System.out.println("LOW BALANCE ...." + amount1);
 				}
@@ -160,9 +155,6 @@ public class Ui {
 						transaction.setStatus("credited");
 						transaction.setAmmount(amountToTransfer);
 						service.storeIntoTransactionTable(transaction);
-						// String stmt = "\nfunds transfer from "+accountNo+" to "+anotherAccountNo+
-						// "with an ammount of "+amountToTransfer;
-						// thePrintStatement.append(stmt);
 					} else {
 						System.out.println("Insufficient funds....");
 					}
@@ -174,7 +166,6 @@ public class Ui {
 			System.out.println("Enter account Number: ");
 			int accNo = sc.nextInt();
 			service.displayTransactionTable(accNo);
-			// System.out.println("print statement:"+thePrintStatement);
 
 		} else {
 			System.out.println("closing account...");

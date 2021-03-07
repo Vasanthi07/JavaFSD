@@ -42,8 +42,8 @@ public class App {
 				System.out.println("Set Insurance Scheme:");
 				designation=employee.getDesignation();
 				salary = employee.getSalary();
-				//System.out.println(designation);
-				//System.out.println(salary);
+				System.out.println(designation);
+				System.out.println(salary);
 				//get insurance scheme of an employee ..
 				//validate using service reference and use service class methods
 				scheme = employee.setInsuranceScheme(service.validateScheme(designation, salary));

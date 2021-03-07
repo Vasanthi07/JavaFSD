@@ -59,7 +59,7 @@ public class DaoClass implements DaoInterface {
 			while(resultSet.next()) {
 				System.out.println("Id: "+resultSet.getInt("empid")+
 						" Name: "+resultSet.getString("empname")+" salary: "+resultSet.getInt("salary")+
-						"designation: "+resultSet.getString("scheme"));
+						" designation: "+resultSet.getString("designation")+" scheme"+resultSet.getString("scheme"));
 			}
 		} catch (SQLException e) {
 			System.out.println("cant load db.."+e.getMessage());
